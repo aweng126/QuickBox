@@ -51,7 +51,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
         if(mContext==null){
             mContext=parent.getContext();
         }
-        View view= LayoutInflater.from(mContext).inflate(R.layout.item_shop,null,false);
+        View view= LayoutInflater.from(mContext).inflate(R.layout.item_shop,null,false);//如果第二个选项选择parent，那么最后只能显示一行
 
         return new ViewHolder(view);
     }
@@ -67,14 +67,12 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        Log.e(TAG, "getItemCount: shopList,size"+shopList.size() );
+      //  Log.e(TAG, "getItemCount: shopList,size"+shopList.size() );
         return shopList.size();
     }
 
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-
-        CardView cardView;
 
         ImageView shopImage;
 
@@ -83,7 +81,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
 
             super(itemView);
-//            cardView= (CardView) itemView;
+
             shopImage= (ImageView) itemView.findViewById(R.id.iv_item_shop);
             shopName= (TextView) itemView.findViewById(R.id.tv_item_shop);
 

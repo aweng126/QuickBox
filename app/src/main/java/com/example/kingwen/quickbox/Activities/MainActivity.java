@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,6 +26,8 @@ import com.example.kingwen.quickbox.R;
 
 public class MainActivity extends  BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final String TAG="MainActivity";
 
     /**
      * 保存当前fragment
@@ -147,7 +150,9 @@ public class MainActivity extends  BaseActivity
         drawer.closeDrawer(GravityCompat.START);
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.main_contain,currentFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_contain,currentFragment).commit();
+        Log.e(TAG, "onNavigationItemSelected: currentFragment"+currentFragment.getClass().getName()+"" );
+
         return true;
     }
 
