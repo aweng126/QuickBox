@@ -2,7 +2,6 @@ package com.example.kingwen.quickbox.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +12,7 @@ import com.example.kingwen.quickbox.R;
 /**
  * Created by kingwen on 2016/12/11.
  */
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends  BaseActivity {
 
     /**
      * 输入用户名的edittext控件
@@ -90,8 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(judgeLegal(name,pass,confirmpass)){
 
-                    Intent intent =new Intent(RegisterActivity.this,LoginActivity.class);
-                    startActivity(intent);
+                    startMyActivity(RegisterActivity.this,LoginActivity.class);
 
                 }else {
                     Toast.makeText(RegisterActivity.this, "用户名或密码不合法,请重新输入", Toast.LENGTH_SHORT).show();
