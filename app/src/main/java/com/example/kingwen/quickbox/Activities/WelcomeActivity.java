@@ -48,6 +48,8 @@ public class WelcomeActivity extends BaseActivity {
             }
         });
 
+
+
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
